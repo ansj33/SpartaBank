@@ -58,10 +58,11 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.6f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\WithdrawBtn.cs" />
-    <Compile Include="Assets\Scripts\BackBtn.cs" />
-    <Compile Include="Assets\Scripts\DepositController.cs" />
-    <Compile Include="Assets\Scripts\DepositBtn.cs" />
+    <Compile Include="Assets\Scripts\Controller\DepositController.cs" />
+    <Compile Include="Assets\Scripts\Buttons\DepositBtn.cs" />
+    <Compile Include="Assets\Scripts\Controller\WithdrawController.cs" />
+    <Compile Include="Assets\Scripts\Buttons\BackBtn.cs" />
+    <Compile Include="Assets\Scripts\Buttons\WithdrawBtn.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
