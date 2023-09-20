@@ -10,23 +10,31 @@ public class DepositController : MonoBehaviour
     public InputField DespositInput; // 입력창
     public GameObject WarningPanel;
 
+    private DataManager dataManager;
 
-    private int cash = 100000; // 초기 현금
-    private int balance = 50000; // 초기 잔액
+    private void Start()
+    {
+        dataManager = DataManager.instance;
+        UpdateUI();
+    }
 
     private void UpdateUI()
     {
-        cashText.text = cash.ToString("N0"); //NO를 쓰면 단위 표기 가능
-        balanceText.text = balance.ToString("N0");
+        cashText.text = dataManager.cash.ToString("N0"); //NO를 쓰면 단위 표기 가능
+        balanceText.text = dataManager.balance.ToString("N0");
     }
 
     private void Deposit(int amount)
     {
-        if (cash >= amount)
+
+        if (dataManager.cash >= amount)
         {
-            cash -= amount;
-            balance += amount;
+            dataManager.cash -= amount;
+            dataManager.balance += amount;
             UpdateUI();
+
+            DataManager.instance.cash = dataManager.cash;
+            DataManager.instance.balance = dataManager.balance;
         }
         else
         {

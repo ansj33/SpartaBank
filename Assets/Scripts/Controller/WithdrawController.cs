@@ -11,21 +11,26 @@ public class WithdrawController : MonoBehaviour
     public GameObject WarningPanel;
 
 
-    private int cash = 100000; // 초기 현금
-    private int balance = 50000; // 초기 잔액
+    private DataManager dataManager;
+
+    private void Start()
+    {
+        dataManager = DataManager.instance;
+        UpdateUI();
+    }
 
     private void UpdateUI()
     {
-        cashText.text = cash.ToString("N0"); //NO를 쓰면 단위 표기 가능
-        balanceText.text = balance.ToString("N0");
+        cashText.text = dataManager.cash.ToString("N0"); //NO를 쓰면 단위 표기 가능
+        balanceText.text = dataManager.balance.ToString("N0");
     }
 
     private void Withdraw(int amount)
     {
-        if (balance >= amount)
+        if (dataManager.balance >= amount)
         {
-            cash += amount;
-            balance -= amount;
+            dataManager.cash += amount;
+            dataManager.balance -= amount;
             UpdateUI();
         }
         else

@@ -61,8 +61,10 @@
     <Compile Include="Assets\Scripts\Controller\DepositController.cs" />
     <Compile Include="Assets\Scripts\Buttons\DepositBtn.cs" />
     <Compile Include="Assets\Scripts\Controller\WithdrawController.cs" />
+    <Compile Include="Assets\Scripts\Controller\MainSceneController.cs" />
     <Compile Include="Assets\Scripts\Buttons\BackBtn.cs" />
     <Compile Include="Assets\Scripts\Buttons\WithdrawBtn.cs" />
+    <Compile Include="Assets\Scripts\DataManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
